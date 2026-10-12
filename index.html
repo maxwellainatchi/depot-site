@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Depot · every package manager, one window</title>
+  <meta name="description" content="Depot is a desktop app that puts Homebrew, the Mac App Store, npm, pipx, Cargo, winget and more behind one window. See what is installed, what has updates, and what happened.">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+  <meta property="og:title" content="Depot">
+  <meta property="og:description" content="Every package manager on your machine, behind one window.">
+  <meta property="og:image" content="assets/shots/activity-dark.webp">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icon-256.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top"><img src="assets/icon.svg" alt="" width="28" height="28">Depot</a>
+      <nav aria-label="Sections">
+        <a href="#features">Features</a>
+        <a href="#managers">Package managers</a>
+        <a href="#download">Download</a>
+        <a href="https://github.com/maxwellainatchi/depot">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <p class="label">Preview · v0.1.2 · macOS and Windows</p>
+      <h1>Every package manager.<br>One window.</h1>
+      <p class="lede">Depot shows what is installed, what has updates, and what happened, across Homebrew, the Mac App Store, npm, pipx, Cargo, winget and more. To change anything, it runs the package manager's own command, and shows you exactly what it ran.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#download">Download the preview</a>
+        <a class="btn" href="https://github.com/maxwellainatchi/depot">View on GitHub</a>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <figure class="shot shot-hero">
+        <picture>
+          <source srcset="assets/shots/activity-dark.webp" media="(prefers-color-scheme: dark)">
+          <img src="assets/shots/activity-light.webp" alt="Depot's Updates screen: pending updates grouped by package manager, with the operation queue showing brew upgrade running live." width="1920" height="1200">
+        </picture>
+      </figure>
+    </section>
+
+    <section class="wrap rules" aria-label="Principles">
+      <div class="rule">
+        <h2>Every command is visible</h2>
+        <p>Depot never changes anything except by running a package manager's command, and each one appears in the operation log exactly as it was run. History keeps the log for every check, install, update and removal.</p>
+        <pre class="term" aria-label="Example operation log"><span class="p">$</span> brew upgrade git
+<span class="m">git 2.47.1 -&gt; 2.48.0</span>
+<span class="p">$</span> pipx upgrade ruff
+<span class="m">upgraded package ruff from 0.8.0 to 0.8.1</span></pre>
+      </div>
+      <div class="rule">
+        <h2>Nothing is hard-coded per manager</h2>
+        <p>Each adapter declares what its manager can do: pin, roll back, repositories, services. The interface only shows the controls that apply, so Homebrew gets taps and services, and npm doesn't pretend to.</p>
+        <ul class="caps">
+          <li>pin</li><li>rollback</li><li>taps</li><li>services</li><li>buckets</li><li>holds</li><li>elevation</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="features" class="wrap features">
+      <p class="label">What it does</p>
+      <h2 class="section-title">One place to see and change everything you've installed</h2>
+
+      <article class="feature">
+        <div class="feature-text">
+          <h3>The whole machine at a glance</h3>
+          <p>The Dashboard shows updates available, packages installed, package managers found and recent activity. Updates are grouped by source: select all, only majors or one manager, pin, skip a version, or read the release notes in place.</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="assets/shots/dashboard-dark.webp" media="(prefers-color-scheme: dark)">
+            <img src="assets/shots/dashboard-light.webp" alt="Depot's Dashboard: 7 updates available, 14 packages installed, 6 package managers, with recent activity." width="1920" height="1200" >
+          </picture>
+        </figure>
+      </article>
+
+      <article class="feature">
+        <div class="feature-text">
+          <h3>Everything installed, in one table</h3>
+          <p>Every package from every source, with its version, status and size. The same software installed through two managers shows as one row that names both. Export a list, import it on another machine.</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="assets/shots/installed-dark.webp" media="(prefers-color-scheme: dark)">
+            <img src="assets/shots/installed-light.webp" alt="Depot's Installed screen: packages from brew, cask, mas, npm, pipx and cargo in one table." width="1920" height="1200" >
+          </picture>
+        </figure>
+      </article>
+
+      <article class="feature">
+        <div class="feature-text">
+          <h3>Search every source at once</h3>
+          <p>Discover searches all your package managers together, notes when something is already installed elsewhere, and shows the exact install command before it runs.</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="assets/shots/discover-dark.webp" media="(prefers-color-scheme: dark)">
+            <img src="assets/shots/discover-light.webp" alt="Depot's Discover screen: a search for ripgrep showing it is available from brew and cargo, with the brew install command." width="1920" height="1200" >
+          </picture>
+        </figure>
+      </article>
+
+      <article class="feature">
+        <div class="feature-text">
+          <h3>A history you can undo</h3>
+          <p>Every check, install, update and removal, with its full log, and a revert where the package manager can do one.</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="assets/shots/history-dark.webp" media="(prefers-color-scheme: dark)">
+            <img src="assets/shots/history-light.webp" alt="Depot's History screen: an update of four packages with per-package revert buttons, and a failed npm update with its error." width="1920" height="1200" >
+          </picture>
+        </figure>
+      </article>
+
+      <div class="grid">
+        <div class="card tray">
+          <picture>
+            <source srcset="assets/shots/tray-dark.webp" media="(prefers-color-scheme: dark)">
+            <img src="assets/shots/tray-light.webp" alt="Depot's tray menu: 7 updates with an Update all button." width="380" height="270" >
+          </picture>
+          <div>
+            <h3>From the menu bar</h3>
+            <p>The tray icon shows the pending-update count, the top updates, and Update all, without opening the window.</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Scheduled checks</h3>
+          <p>Per source, choose to install updates automatically, be notified, check quietly, or not check. A single package can always or never update automatically, whatever its source does.</p>
+        </div>
+        <div class="card">
+          <h3>Lists</h3>
+          <p>Named sets of packages, installed or not: "Want to try", "Essentials", an uninstall queue. Each list exports and imports on its own.</p>
+        </div>
+        <div class="card">
+          <h3>Light and dark</h3>
+          <p>Depot follows your system appearance, or the one you pick in Settings. This page does too.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="managers" class="wrap managers">
+      <p class="label">Supported package managers</p>
+      <h2 class="section-title">Depot uses the ones it finds installed</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Manager</th><th scope="col">Platforms</th><th scope="col">Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Homebrew formulae</td><td>macOS, Linux</td><td>Taps, services, pinning</td></tr>
+            <tr><td>Homebrew casks</td><td>macOS</td><td></td></tr>
+            <tr><td>Mac App Store</td><td>macOS</td><td>Through the <a href="https://github.com/mas-cli/mas"><code>mas</code></a> command-line tool</td></tr>
+            <tr><td>npm (global)</td><td>macOS, Linux</td><td></td></tr>
+            <tr><td>pipx</td><td>macOS, Linux</td><td></td></tr>
+            <tr><td>Cargo</td><td>macOS, Linux</td><td>Updates through <code>cargo install</code></td></tr>
+            <tr><td>winget</td><td>Windows</td><td><span class="tag">in progress</span></td></tr>
+            <tr><td>Scoop</td><td>Windows</td><td>Buckets, holds <span class="tag">in progress</span></td></tr>
+            <tr><td>Chocolatey</td><td>Windows</td><td>Asks for administrator approval <span class="tag">in progress</span></td></tr>
+            <tr><td>APT, DNF, Flatpak</td><td>Linux</td><td><span class="tag">core only</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="extend">
+        <div>
+          <h3>Bring your own</h3>
+          <p>Any command-line package manager that prints JSON can be added without changing Depot. Describe its commands in a TOML manifest and drop it in <code>~/.config/depot/adapters/</code>, or load it from Settings.</p>
+          <p><a href="https://github.com/maxwellainatchi/depot/blob/main/docs/examples/pipx.adapter.toml">See a complete example →</a></p>
+        </div>
+        <pre class="code"><code><span class="k">id</span>        = <span class="s">"pipx-manifest"</span>
+<span class="k">binary</span>    = <span class="s">"pipx"</span>
+<span class="k">detect</span>    = <span class="s">"pipx --version"</span>
+
+<span class="h">[commands]</span>
+<span class="k">list</span>      = <span class="s">"pipx list --json"</span>
+<span class="k">install</span>   = <span class="s">"pipx install {name}{version:==}"</span>
+<span class="k">upgrade</span>   = <span class="s">"pipx upgrade {name}"</span>
+<span class="k">uninstall</span> = <span class="s">"pipx uninstall {name}"</span>
+
+<span class="h">[parse.list]</span>
+<span class="k">items</span>   = <span class="s">"venvs.*"</span>
+<span class="k">version</span> = <span class="s">"metadata.main_package.package_version"</span></code></pre>
+      </div>
+    </section>
+
+    <section id="download" class="wrap download">
+      <div class="download-card">
+        <img src="assets/icon.svg" alt="" width="96" height="96">
+        <h2>Try the preview</h2>
+        <p>Depot is in development. Preview installers for macOS (Apple Silicon and Intel) and 64-bit Windows are on the GitHub releases page, and once installed, Depot can update itself.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://github.com/maxwellainatchi/depot/releases/latest">Download from GitHub</a>
+          <a class="btn" href="https://github.com/maxwellainatchi/depot#running-from-source">Build from source</a>
+        </div>
+        <details>
+          <summary>The builds are not signed yet</summary>
+          <p>Your computer will warn you the first time. That is expected.</p>
+          <p><strong>macOS:</strong> open the <code>.dmg</code>, drag Depot to Applications and open it. When macOS refuses, go to System Settings → Privacy &amp; Security and click <em>Open Anyway</em>.</p>
+          <p><strong>Windows:</strong> run the installer. When SmartScreen says "Windows protected your PC", click <em>More info</em>, then <em>Run anyway</em>.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="wrap roadmap">
+      <p class="label">Roadmap</p>
+      <ol>
+        <li><strong>macOS</strong><span>Nearly done</span></li>
+        <li><strong>Windows</strong><span>winget, Scoop, Chocolatey, administrator prompts</span></li>
+        <li><strong>Release readiness</strong><span>Signing, installers, self-update</span></li>
+        <li><strong>Linux desktop</strong><span>polkit prompts, Snap</span></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <span>Depot is MIT licensed and built with Tauri, Rust and React.</span>
+    <a href="https://github.com/maxwellainatchi/depot">github.com/maxwellainatchi/depot</a>
+  </footer>
+</body>
+</html>
