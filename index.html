@@ -25,20 +25,19 @@
       <nav aria-label="Sections">
         <a href="#features">Features</a>
         <a href="#managers">Package managers</a>
-        <a href="#download">Download</a>
-        <a href="https://github.com/maxwellainatchi/depot">GitHub</a>
+        <a href="#preview">Preview</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <section class="hero wrap">
-      <p class="label">Preview · v0.1.2 · macOS and Windows</p>
+      <p class="label">In preview · macOS and Windows</p>
       <h1>Every package manager.<br>One window.</h1>
       <p class="lede">Depot shows what is installed, what has updates, and what happened, across Homebrew, the Mac App Store, npm, pipx, Cargo, winget and more. To change anything, it runs the package manager's own command, and shows you exactly what it ran.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="#download">Download the preview</a>
-        <a class="btn" href="https://github.com/maxwellainatchi/depot">View on GitHub</a>
+        <a class="btn btn-primary" href="#features">See what it does</a>
+        <a class="btn" href="#managers">Supported managers</a>
       </div>
     </section>
 
@@ -176,7 +175,6 @@
         <div>
           <h3>Bring your own</h3>
           <p>Any command-line package manager that prints JSON can be added without changing Depot. Describe its commands in a TOML manifest and drop it in <code>~/.config/depot/adapters/</code>, or load it from Settings.</p>
-          <p><a href="https://github.com/maxwellainatchi/depot/blob/main/docs/examples/pipx.adapter.toml">See a complete example →</a></p>
         </div>
         <pre class="code"><code><span class="k">id</span>        = <span class="s">"pipx-manifest"</span>
 <span class="k">binary</span>    = <span class="s">"pipx"</span>
@@ -194,21 +192,11 @@
       </div>
     </section>
 
-    <section id="download" class="wrap download">
+    <section id="preview" class="wrap download">
       <div class="download-card">
         <img src="assets/icon.svg" alt="" width="96" height="96">
-        <h2>Try the preview</h2>
-        <p>Depot is in development. Preview installers for macOS (Apple Silicon and Intel) and 64-bit Windows are on the GitHub releases page, and once installed, Depot can update itself.</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="https://github.com/maxwellainatchi/depot/releases/latest">Download from GitHub</a>
-          <a class="btn" href="https://github.com/maxwellainatchi/depot#running-from-source">Build from source</a>
-        </div>
-        <details>
-          <summary>The builds are not signed yet</summary>
-          <p>Your computer will warn you the first time. That is expected.</p>
-          <p><strong>macOS:</strong> open the <code>.dmg</code>, drag Depot to Applications and open it. When macOS refuses, go to System Settings → Privacy &amp; Security and click <em>Open Anyway</em>.</p>
-          <p><strong>Windows:</strong> run the installer. When SmartScreen says "Windows protected your PC", click <em>More info</em>, then <em>Run anyway</em>.</p>
-        </details>
+        <h2>Coming soon</h2>
+        <p>Depot is in development and is being tried by a small group of testers on macOS and Windows. A public download will be here once it is ready.</p>
       </div>
     </section>
 
@@ -224,8 +212,7 @@
   </main>
 
   <footer class="wrap footer">
-    <span>Depot is MIT licensed and built with Tauri, Rust and React.</span>
-    <a href="https://github.com/maxwellainatchi/depot">github.com/maxwellainatchi/depot</a>
+    <span>Depot is built with Tauri, Rust and React.</span>
   </footer>
 </body>
 </html>
