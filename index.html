@@ -34,7 +34,7 @@
 
   <main id="top">
     <section class="hero wrap">
-      <p class="label">In preview · macOS and Windows</p>
+      <p class="label">In preview · macOS, Windows and Android</p>
       <h1>Every package manager.<br>One window.</h1>
       <p class="lede">Depot shows what is installed, what has updates, and what happened, across Homebrew, the Mac App Store, npm, pipx, Cargo, winget and more, on this computer and on your other machines. To change anything, it runs the package manager's own command, and shows you exactly what it ran.</p>
       <div class="cta">
@@ -192,7 +192,7 @@
 
     <section id="machines" class="wrap features">
       <p class="label">Other machines</p>
-      <h2 class="section-title">Your home server and your other Macs, from the same window</h2>
+      <h2 class="section-title">Your home server and your other Macs, from the same window or your phone</h2>
 
       <article class="feature">
         <div class="feature-text">
@@ -218,6 +218,27 @@
             <img src="assets/shots/remote-light.webp" alt="Depot's Updates screen for a home server reached over SSH: APT and npm updates, with a banner naming the machine, its OS and its agent version." width="1920" height="1200" >
           </picture>
         </figure>
+      </article>
+
+      <article class="feature">
+        <div class="feature-text">
+          <h3>From your phone</h3>
+          <p>An Android app reaches the same machines from your pocket. It has SSH built in, with its own key that never leaves the phone, and it asks you to check a machine's fingerprint before trusting it. Pick a machine to see its overview, updates and packages, and to update, install or remove.</p>
+        </div>
+        <div class="phones">
+          <figure class="shot phone">
+            <picture>
+              <source srcset="assets/shots/phone-machines-dark.webp" media="(prefers-color-scheme: dark)">
+              <img src="assets/shots/phone-machines-light.webp" alt="The Depot Android app's Machines screen: a home server and a Raspberry Pi, an Add machine button, and this phone's SSH key." width="780" height="1688">
+            </picture>
+          </figure>
+          <figure class="shot phone">
+            <picture>
+              <source srcset="assets/shots/phone-overview-dark.webp" media="(prefers-color-scheme: dark)">
+              <img src="assets/shots/phone-overview-light.webp" alt="The Depot Android app showing a home server's overview: 7 updates available, 14 packages installed, warnings and recent activity, with tabs for Overview, Updates, Installed, Discover and More." width="780" height="1688">
+            </picture>
+          </figure>
+        </div>
       </article>
     </section>
 
@@ -302,6 +323,7 @@
         <li><strong>Release readiness</strong><span>Installers and self-update done; signing next</span></li>
         <li><strong>Other machines</strong><span>Macs and Linux over SSH done; Windows machines and administrator passwords next</span></li>
         <li><strong>Linux desktop</strong><span>polkit prompts, Snap</span></li>
+        <li><strong>Android app</strong><span>Runs on phones; phone-sized tables, an overview of every machine and release builds next</span></li>
         <li><strong>Version managers</strong><span>nvm, mise, asdf, pyenv, rustup</span></li>
       </ol>
     </section>
