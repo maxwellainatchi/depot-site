@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Depot · every package manager, one window</title>
-  <meta name="description" content="Depot is a desktop app that puts Homebrew, the Mac App Store, npm, pipx, Cargo, winget and more behind one window. See what is installed, what has updates, and what happened.">
+  <meta name="description" content="Depot is a desktop app that puts Homebrew, the Mac App Store, npm, pipx, Cargo, winget and more behind one window, on this computer and on your other machines over SSH. See what is installed, what has updates, and what happened.">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
   <meta property="og:title" content="Depot">
@@ -24,6 +24,8 @@
       <a class="brand" href="#top"><img src="assets/icon.svg" alt="" width="28" height="28">Depot</a>
       <nav aria-label="Sections">
         <a href="#features">Features</a>
+        <a href="#machines">Other machines</a>
+        <a href="#assistants">AI assistants</a>
         <a href="#managers">Package managers</a>
         <a href="#preview">Preview</a>
       </nav>
@@ -34,7 +36,7 @@
     <section class="hero wrap">
       <p class="label">In preview · macOS and Windows</p>
       <h1>Every package manager.<br>One window.</h1>
-      <p class="lede">Depot shows what is installed, what has updates, and what happened, across Homebrew, the Mac App Store, npm, pipx, Cargo, winget and more. To change anything, it runs the package manager's own command, and shows you exactly what it ran.</p>
+      <p class="lede">Depot shows what is installed, what has updates, and what happened, across Homebrew, the Mac App Store, npm, pipx, Cargo, winget and more, on this computer and on your other machines. To change anything, it runs the package manager's own command, and shows you exactly what it ran.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#features">See what it does</a>
         <a class="btn" href="#managers">Supported managers</a>
@@ -75,7 +77,7 @@
       <article class="feature">
         <div class="feature-text">
           <h3>The whole machine at a glance</h3>
-          <p>The Dashboard shows updates available, packages installed, package managers found and recent activity. Updates are grouped by source: select all, only majors or one manager, pin, skip a version, or read the release notes in place.</p>
+          <p>The Dashboard shows updates available, packages installed, package managers found, warnings and recent activity. Updates are grouped by source: select all, only majors or one manager, pin, skip a version, or read the release notes in place.</p>
         </div>
         <figure class="shot">
           <picture>
@@ -124,6 +126,32 @@
         </figure>
       </article>
 
+      <article class="feature">
+        <div class="feature-text">
+          <h3>Know what needs attention</h3>
+          <p>Health lists installed packages with known vulnerabilities, from <a href="https://osv.dev">OSV.dev</a>, or that their manager has deprecated, with the update that fixes each one. It also finds disk space the managers can give back, such as old versions, download caches and dependencies nothing needs, and frees it with their own cleanup commands.</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="assets/shots/health-dark.webp" media="(prefers-color-scheme: dark)">
+            <img src="assets/shots/health-light.webp" alt="Depot's Health screen: a high-severity npm vulnerability, a pipx one with an Update to 0.8.1 button, a deprecated Homebrew formula, and 1.9 GB of disk space to clean up." width="1920" height="1200" >
+          </picture>
+        </figure>
+      </article>
+
+      <article class="feature">
+        <div class="feature-text">
+          <h3>See how it all changes</h3>
+          <p>Insights charts what is installed and what happened to it: changes per week, installs per month, size and count per manager, the largest and most-updated packages, and a dependency graph you can explore.</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="assets/shots/insights-dark.webp" media="(prefers-color-scheme: dark)">
+            <img src="assets/shots/insights-light.webp" alt="Depot's Insights screen: disk used by packages, package changes per week, packages installed per month, and packages and disk use per manager." width="1920" height="1200" >
+          </picture>
+        </figure>
+      </article>
+
       <div class="grid">
         <div class="card tray">
           <picture>
@@ -144,9 +172,75 @@
           <p>Named sets of packages, installed or not: "Want to try", "Essentials", an uninstall queue. Each list exports and imports on its own.</p>
         </div>
         <div class="card">
+          <h3>Pin, skip or ignore</h3>
+          <p>Hold a package at its version, skip one release, or stop hearing about a package's updates altogether.</p>
+        </div>
+        <div class="card">
+          <h3>Command palette</h3>
+          <p>Press <kbd>⌘K</kbd> (<kbd>Ctrl+K</kbd> on Windows) to jump to any screen, package, update or action by typing.</p>
+        </div>
+        <div class="card">
+          <h3>Keeps itself current</h3>
+          <p>Depot checks for its own new versions and installs them when you say so, from Settings.</p>
+        </div>
+        <div class="card">
           <h3>Light and dark</h3>
           <p>Depot follows your system appearance, or the one you pick in Settings. This page does too.</p>
         </div>
+      </div>
+    </section>
+
+    <section id="machines" class="wrap features">
+      <p class="label">Other machines</p>
+      <h2 class="section-title">Your home server and your other Macs, from the same window</h2>
+
+      <article class="feature">
+        <div class="feature-text">
+          <h3>Every machine on the Dashboard</h3>
+          <p>Add a Mac or Linux machine you can reach over SSH, and Depot installs its small agent there itself. The Dashboard then sums up each machine: updates, packages, package managers, warnings and recent activity.</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="assets/shots/machines-dark.webp" media="(prefers-color-scheme: dark)">
+            <img src="assets/shots/machines-light.webp" alt="Depot's Dashboard with this computer, a home server running Ubuntu 24.04 with 5 updates, and a Mac mini with 1 update." width="1920" height="1200" >
+          </picture>
+        </figure>
+      </article>
+
+      <article class="feature">
+        <div class="feature-text">
+          <h3>Work on it as if you were there</h3>
+          <p>Pick a machine and every screen switches to it. Installs, updates and removals run on that machine's own queue and finish even if Depot closes, and every command still appears in the log exactly as it ran. Windows machines and changes that need an administrator password are next.</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="assets/shots/remote-dark.webp" media="(prefers-color-scheme: dark)">
+            <img src="assets/shots/remote-light.webp" alt="Depot's Updates screen for a home server reached over SSH: APT and npm updates, with a banner naming the machine, its OS and its agent version." width="1920" height="1200" >
+          </picture>
+        </figure>
+      </article>
+    </section>
+
+    <section id="assistants" class="wrap assistants">
+      <p class="label">AI assistants</p>
+      <h2 class="section-title">Let Claude check for updates, on your terms</h2>
+      <div class="extend">
+        <div>
+          <h3>Depot is an MCP server</h3>
+          <p>An assistant such as Claude Code or Claude Desktop can list packages, updates and warnings, and queue installs, updates and removals, on this computer and on your other machines.</p>
+          <p>Access is off until you turn it on in Settings, as read only or full access. What an assistant queues goes through Depot's one queue and shows in History as "AI assistant".</p>
+        </div>
+        <pre class="code"><code><span class="h"># Claude Code, on a Mac</span>
+<span class="k">claude mcp add depot -- \</span>
+  <span class="s">/Applications/Depot.app/Contents/MacOS/depot --mcp</span>
+
+<span class="h"># Read</span>
+<span class="k">list_packages</span>  <span class="k">list_updates</span>  <span class="k">get_health</span>
+<span class="k">search_packages</span>  <span class="k">get_history</span>  <span class="k">list_machines</span>
+
+<span class="h"># Change, when you allow it</span>
+<span class="s">install_packages</span>  <span class="s">update_packages</span>
+<span class="s">uninstall_packages</span>  <span class="s">check_for_updates</span></code></pre>
       </div>
     </section>
 
@@ -196,7 +290,7 @@
       <div class="download-card">
         <img src="assets/icon.svg" alt="" width="96" height="96">
         <h2>Coming soon</h2>
-        <p>Depot is in development and is being tried by a small group of testers on macOS and Windows. A public download will be here once it is ready.</p>
+        <p>Depot is in development. Version 0.2.4 is being tried by a small group of testers on macOS and Windows, and it updates itself as new versions come out. A public download will be here once it is ready.</p>
       </div>
     </section>
 
@@ -205,8 +299,10 @@
       <ol>
         <li><strong>macOS</strong><span>Nearly done</span></li>
         <li><strong>Windows</strong><span>winget, Scoop, Chocolatey, administrator prompts</span></li>
-        <li><strong>Release readiness</strong><span>Signing, installers, self-update</span></li>
+        <li><strong>Release readiness</strong><span>Installers and self-update done; signing next</span></li>
+        <li><strong>Other machines</strong><span>Macs and Linux over SSH done; Windows machines and administrator passwords next</span></li>
         <li><strong>Linux desktop</strong><span>polkit prompts, Snap</span></li>
+        <li><strong>Version managers</strong><span>nvm, mise, asdf, pyenv, rustup</span></li>
       </ol>
     </section>
   </main>
