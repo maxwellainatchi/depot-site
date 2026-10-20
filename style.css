@@ -186,6 +186,11 @@ details { margin-top: 8px; max-width: 560px; text-align: left; color: var(--text
 summary { cursor: pointer; color: var(--text); font-weight: 500; text-align: center; }
 details p { margin-top: 10px; }
 
+/* Phone shots */
+.phones { display: flex; gap: 20px; justify-content: center; }
+.shot.phone { flex: 0 1 240px; border-radius: 28px; }
+.feature h3 .tag { vertical-align: 4px; }
+
 /* AI assistants */
 .assistants { margin-bottom: 120px; }
 .assistants .section-title { margin-bottom: 32px; }
